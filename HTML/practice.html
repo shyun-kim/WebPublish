@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {background-color: red;}
+    </style>
+</head>
+<body>
+    <h1>heading</h1>
+    <h2>heading</h2>
+    <h3>heading</h3>
+    <h4>heading</h4>
+    <h5>heading</h5>
+    <h6>heading</h6>
+    <h1>특수문자는 따로 입력 &copy; &lt; &gt;</h1>
+    <h1>h1 태그나,</h1>
+    <p>p태그,</p>
+    <div>div 태그는 블록레벨, 페이지의 양옆을 기준으로 전체 다 차지함</div>
+    <hr>
+    <a>a태그나</a>
+    <span>span 태그는 인라인 레벨, 페이지의 양옆을 기준으로 전체 다 차지하지 않음</span><br>
+    <h1 style= "display:inline-block; width: 300px; color: red;">인라인 블록으로 설정하면 크기는 인라인 처럼 개체 크기로 지정 되지만, 사이즈 변경 가능</h1>
+
+    <p style="background-color: yellow;">근데 이렇게 p태그 선언할때랑 title 밑에 style을 둘다 선언하면 어떻게 되지?</p>
+    <p>태그에 style 선언한 애들은 그게 적용되고 나머지는 타이틀 밑에서 선언한게 적용되는구나</p>
+
+    <div>
+        <div class = "logo">
+            <span>로고</span>
+    </div>
+    <header>
+        <div class = "header_menu">
+            <span>헤더 메뉴</span>
+        </div>
+    </header>
+    <main>
+        <div class = "content">
+            <span> 메인메뉴</span>
+        </div>
+    </main>
+    <footer>
+        <div class = "footer_menu">
+            <span>푸터 메뉴</span>
+        </div>
+    </footer>
+
+    <p style="color: aqua;">
+        p태그는 블록 레벨
+        <span>하지만 블록레벨에 포함된 인라인 span도 스타일 적용됨</span>
+        <p>p태그 안의 p태그는 적용 안됨</p>
+    </p>
+
+    <ul>
+        <li>ul리스트는</li>
+        <li>ul태그로 감싸고</li>
+        <li>내부는 li이며</li>
+        <li>숫자 없이 동그라미</li>
+    </ul>
+    <ol>
+        <li>ol리스트는</li>
+        <li>ol태그로 감싸고</li>
+        <li>내부는 동일하게 li이며</li>
+        <li>숫자 순서대로 정렬됨</li>
+    </ol>
+    <dl>
+        <dt>Definition 리스트는</dt>
+        <dd>dl태그로 감싸고</dd>
+        <dd>내부는 dd태그이며</dd>
+        <dd>가장 상위dt 태그 밑으로 dd 태그 값들이 들어감</dd>
+    </dl>
+    <nav>
+        <ul>
+            <li>
+                <a href="#">이런식으로</a>
+                <dl>
+                    <dd>1</dd>
+                    <dd>2</dd>
+                    <dd>3</dd>
+                </dl>
+            </li>
+            <li>
+                <a href="#">nav와 dl-dd태그를 활용해서</a>
+                <dl>
+                    <dt>ENG</dt>
+                    <dd>A</dd>
+                    <dd>B</dd>
+                    <dd>C</dd>
+                </dl>
+            </li>
+            <li>
+                <a href="#">메뉴-서브메뉴 구성 가능</a>
+                <dl>
+                    <dt>한글</dt>
+                    <dd>가</dd>
+                    <dd>나</dd>
+                    <dd>다</dd>
+                </dl>
+            </li>
+        </ul>
+    </nav>
+
+    <table border = "3">
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th>제목1</th>
+                <th>제목2</th>
+                <th>제목3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <td>data</td>
+                <td colspan = "2">data</td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>data</td>
+                <td>data</td>
+                <td>data</td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td>data</td>
+                <td>data</td>
+                <td rowspan = "2">data<br>data</td>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td>data</td>
+                <td>data</td>
+            </tr>
+        </tbody>
+    </table>
+    <span> anchor는 그냥 링크라고 생각해</span>
+    <a href="https://www.naver.com" target="_self">네이버_현재창</a> <!-- 기본값은 자기 자신-->
+    <a href="https://www.naver.com" target="_blank">네이버_새창</a>
+    <a href="01_hello.html"> 상대 경로</a>
+
+    <span id = aid>앵커에다 아이디를 주면 숏컷 가능</span>
+    <a href = "#a1"> #1 anchor</a>
+    <a href = "#a2"> #2 anchor</a>
+    <a href = "#a3"> #3 anchor</a>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        <p id="a1" style="background-color: yellow;">
+        <span>Anchor id #1</span><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        </p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        <p id="a2" style="background-color: aqua;">
+        <span>Anchor id #1</span><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        </p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+
+
+        <p id="a3" style="background-color: tomato;">
+        <span>Anchor id #1</span><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+     </p>
+     
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Sequi repudiandae, hic distinctio harum nemo assumenda temporibus dolores quasi labore esse odio sint quos debitis, <br>
+        rerum earum qui fuga repellendus unde.<br><br>
+    </p>
+    <a href="#aid">맨 처음으로🔼</a><br>
+
+    <img src="http://localhost:5500/HTML/images/img1.jpg"
+    alt="오류났을때 출력되는 텍스트"
+    width="500px">
+
+    <h1>form tag</h1>
+    <h3> 이름, 주소, 전송, 취소 버튼 생성</h3>
+    <form action="백엔드 서버 파일 주소">
+        <label for="">이름: </label><input type="text"><br>
+        <label for="">주소: </label><input type="text"><br>
+        <input type="button" value="전송">
+        <input type="reset" value="취소">
+    </form>
+    <form action="백엔드 파일주소">
+        <ul>
+            <li>
+                <input type = "text" name="name" placeholder="이름">
+            </li>
+            <li>
+                <input type = "text" name="address" placeholder="주소">
+            </li>
+            <li>
+                <button type = "button">전송</button>
+                <button type = "reset">취소</button>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>
