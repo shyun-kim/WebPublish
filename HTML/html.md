@@ -80,4 +80,11 @@ javascript = netscape(live script) + sum microsystems
 # 10. 링크 표현<Anchor> : <a>~</a>
 - 형식: <a href="절대/상대 경로"> 컨텐츠 </a>
 - 다른 사이트나 페이지로 링크를 통해 이동하는 경우
-- target 속성은 _self(기본), _blank(새창), _parent(부모 프레임)
+- target 속성은 _self(기본), _blank(새창), _parent(부모 프레임) 등...
+- id 속성을 이용하여 한 페이지에서 자유롭게 이동, <a href="#아이디"> ~ </a>
+
+# 11. 이미지
+- 이미지를 표시하는 태그
+- 필수 속성은 src, alt(이미지 주소가 다른 경우 출력되는 문자), width, height
+- 인라인 블록 레벨을 가짐
+- 
