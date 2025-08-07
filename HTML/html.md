@@ -87,4 +87,15 @@ javascript = netscape(live script) + sum microsystems
 - 이미지를 표시하는 태그
 - 필수 속성은 src, alt(이미지 주소가 다른 경우 출력되는 문자), width, height
 - 인라인 블록 레벨을 가짐
-- 
+
+# 12. 폼 태그
+- 사용자가 데이터를 입력하는 태그
+- input, button, radio, checkbox ...
+- 사용자가 입력한 데이터를 백엔드로 전송하는 방법을 반드시 숙지!
+
+
+font awesome 사이트 무료 아이콘 CDN
+<link
+ rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
