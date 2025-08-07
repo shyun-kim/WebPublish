@@ -76,3 +76,8 @@ javascript = netscape(live script) + sum microsystems
 - 표형식으로 데이터를 표시하는 태그
 - 테이블 태그에 포함 되는 한 행은 <tr>~</tr>
 - tr 태그 안에 실제 데이터를 포함하는 <th>, <td> 태그로 표현
+
+# 10. 링크 표현<Anchor> : <a>~</a>
+- 형식: <a href="절대/상대 경로"> 컨텐츠 </a>
+- 다른 사이트나 페이지로 링크를 통해 이동하는 경우
+- target 속성은 _self(기본), _blank(새창), _parent(부모 프레임)
