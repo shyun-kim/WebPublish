@@ -4,9 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Box Model</title>
+    <style>
+        /*
+            margin과 padding은 TRBL(top, right, bottom, left) 시계 방향 순서로 지정
+            margin: 10px, 5px, 10px, 5px;
+            >> margin: 10px, 5px; 줄여서 사용 가능
+        */
+        h3 {
+            border: 1px solid gray;
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+            /* background-color: aqua; */
+            
+        }
+        .padding h3 {
+            margin: 20px 10px;
+        }
+        .padding, .margin {width: 30%;}
+        .padding {
+            /*padding은 content와 border 사이의 내부 공간을 의미합니다.*/
+            border: 1px solid blue;
+            /*margin-top: 30px;
+            margin-right: 100px;
+            margin-bottom: 50px;
+            margin-left: 100px;*/
+            margin: 30px 100px 50px 100px; 
+        }
+        .margin {
+            /*margin은 border와 다른 요소 사이의 외부 공간을 의미합니다.*/
+            border: 1px solid red;
+            margin-left: 50px;
+        }
+        .inline {
+            width: 30%;
+            border: 5px solid green;
+            /* padding: 20px 10px; */
+        }
+        .inline span {
+            border: 2px solid tomato;
+            padding: 20px; /* inline에서는 적용가능*/
+            /* margin: 20px; inline에서는 left만 적용가능 display: inline-block; 수정필요*/
+        }
+    </style>
 </head>
 <body>
     <h1>Box Model Style : content, border, padding, margin</h1>
+    <div class = "inline">
+        <span>Span Test!!</span>
+    </div>
     <div class = "padding">
         <h3>Padding</h3>
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
