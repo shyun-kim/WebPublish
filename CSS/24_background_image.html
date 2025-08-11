@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background-image</title>
+    <style>
+        body {
+            background-image: url("https://www.lottecinema.co.kr/NLCHS/Content/images/common/logo.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /* background-position: right bottom; */
+            background-position: 100% 100%;
+            background-size: 400px;
+            
+        }
+        img {
+            width: 150px;
+        }
+        div {
+            width: 30%;
+            height: 300px;
+            border: 1px solid red;
+            text-align: center;
+        }
+        .img1 {
+            background-color: aquamarine;
+            /* opacity: 0.5; */
+        }
+        .img2 {
+            background-image: url("../HTML/images/bg_pattern.jpg");
+            background-repeat: repeat;
+        }
+    </style>
+</head>
+<body>
+    <h1>Background-image Style</h1>
+    <div class ="img1">
+        <h3>Image #1</h3>
+        <img src="../HTML/images/img1.jpg" alt="Big Ben">
+    </div>
+    <div class = "img2">
+        <h3>Image #2</h3>
+        <img src="../HTML/images/img3.jpg" alt="Structure">
+    </div>
+    <div class ="img1">
+        <h3>Image #1</h3>
+        <img src="../HTML/images/img1.jpg" alt="Big Ben">
+    </div>
+    <div class = "img2">
+        <h3>Image #2</h3>
+        <img src="../HTML/images/img3.jpg" alt="Structure">
+    </div>
+</body>
+</html>
