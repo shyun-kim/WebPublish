@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Style</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: bisque;
+        }
+        .box:hover {
+            width: 200px;
+            height: 200px;
+            border: 1px solid silver;
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            animation: changeColor 3s 0s 3; /*name, duration, delay, iteration-count*/
+        }
+        @keyframes changeColor {
+            from {background-color: aqua;}
+            50% {background-color: tomato;}
+            to {background-color: blueviolet;}
+        }
+        .box-img {
+            width: 600px;
+            height: 500px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url("../HTML/images/img4.jpg");
+            border: 2px solid red;
+        }
+        .box-img:hover {
+            width: 600px;
+            height: 500px;
+            /* background-image: url("../HTML/images/img5.jpg"); */
+            /* background-size: 100%; */
+            border: 2px solid red;
+            animation: boxImages 10s 0s infinite;
+        }
+        @keyframes boxImages {
+            from {background-image: url("../HTML/images/img1.jpg");
+            background-size: 100%;
+            }
+            25% {background-image: url("../HTML/images/img2.jpg");
+            background-size: 100%;
+            }   
+            50% {background-image: url("../HTML/images/img3.jpg");
+            background-size: 100%;
+            }
+            75% {background-image: url("../HTML/images/img4.jpg");
+            background-size: 100%;
+            }
+            to {background-image: url("../HTML/images/img5.jpg");
+            background-size: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Animation Style</h1>
+    <div class="box"></div>
+    <div class="box-img"></div>
+</body>
+</html>
