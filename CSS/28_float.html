@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float</title>
+    <style>
+        .box-group {
+            border: 1px solid red;
+            overflow: hidden;;
+        }
+        .box-group > div {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            text-align: center;
+            border: 1px solid blue;
+            float: left;
+            /* margin: 0 0 0 10px; */
+            margin-left: 10px;
+        }
+        .box-group > p {
+            clear: both;
+        }
+
+
+        .img-group > img {
+            width: 200px;
+            float: left;
+            margin-right: 30px;
+        }
+        .img-group2 {clear: both;}
+        .img-group2 > img {
+            width: 200px;
+            margin-top: 30px;
+        }
+        .img-group2 > p{
+            width: 50%;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 30px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <h1>Float Style - 블록 레벨의 태그를 한줄로 정렬</h1>
+    <div class = "box-group">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis quas, consectetur in, 
+            ab saepe delectus illum ea distinctio debitis mollitia unde doloribus facilis architecto numquam beatae nemo vitae dolor aspernatur.</p>
+    </div>
+    <nav class = "menu-group">
+        <ul>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i>인스타그램</a></li>
+            <li><a href="#">유튜브</a></li>
+            <li><a href="#">페이스북</a></li>
+        </ul>
+    </nav>
+    <div style="color: black;">컨텐츠 추가!</div>
+    <div class = "img-group">
+        <img src="../HTML/images/img1.jpg" alt="이미지">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ea expedita at eius quibusdam tempore impedit sit adipisci, dolorem, hic sapiente? Eaque quae dignissimos, sit soluta eum distinctio iste laborum.</p>
+    </div>
+    <div class = "img-group2">
+        <img src="../HTML/images/img2.jpg" alt="이미지">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ea expedita at eius quibusdam tempore impedit sit adipisci, dolorem, hic sapiente? Eaque quae dignissimos, sit soluta eum distinctio iste laborum.</p>
+    </div>
+</body>
+</html>
