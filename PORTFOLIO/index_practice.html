@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judy's Portfolio Clone</title>
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style_practice.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-logo">
+            <img src="images/favicon.ico" alt="header-logo" class="header-logo-img">
+            <h1 class="header-logo-title">Judy</h1>
+        </div>
+        <nav>
+            <ul class="header-menu">
+                <li><a class="header-menu-item active" href="#home">Home</a></li>
+                <li><a class="header-menu-item" href="#about">About</a></li>
+                <li><a class="header-menu-item" href="#skill">Skill</a></li>
+                <li><a class="header-menu-item" href="#work">Work</a></li>
+                <li><a class="header-menu-item" href="#testimonial">Testimonial</a></li>
+                <li><a class="header-menu-item" href="#Contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="header-toggle" id="menu_toggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+    <main>
+        <section id="home">
+            <img class="home-avatar" src="images/favicon.ico" alt="photo">
+            <h2 class="home-title">
+                Hello<br>
+                I'm <strong class="home-title strong">Junior Developer</strong>, Judy
+            </h2>
+            <p class="home-description">A software engineer currently residing in Seoul, South Korea</p>
+            <a class="home-contact" href="#">Contact Me</a>
+        </section>
+
+        <section class="section container" id="about">
+            <h2 class="title">About me</h2>
+            <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic dignissimos harum repellendus, officiis, quae enim odio perferendis autem itaque impedit facere distinctio, molestias temporibus nostrum atque eveniet quaerat omnis quis.</p>
+            <ul class="majors">
+                <li class="major">
+                    <i class="fa-brands fa-html5 major-icon"></i>
+                    <p>Front-end</p>
+                    <p>HTML, CSS, JavaScript, React, WebAPIs</p>
+                </li>
+                <li class="major">
+                    <i class="fa-solid fa-mobile major-icon"></i>
+                    <p>Mobile</p>
+                    <p>Android Studio, React Native, iOS, Swift, Java, Kotlin</p>
+                </li>
+                <li class="major">
+                    <i class="fa-solid fa-server major-icon"></i>
+                    <p>Back-end</p>
+                    <p>Java, JavaScript, Go, Kotlin, Spring, Spring Boot</p>
+                </li>
+            </ul>
+            <ul class="jobs">
+                <li class="job">
+                    <img src="images/jobs/google.png" alt="google">
+                    <div>
+                        <p class="job-name">Google as Junior Software Engineer</p>
+                        <p class="job-period">2019 Oct - Until now</p>
+                    </div>
+                </li>
+                <li class="job">
+                    <img src="images/jobs/samsung.png" alt="samsung">
+                    <div>
+                        <p class="job-name">Samsung as Junior Software Engineer</p>
+                        <p class="job-period">2010 Oct - 2019 Oct</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section container" id="skill">
+            <h2 class="title">My Skills</h2>
+            <p class="description">Skills & Attributes</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis saepe labore voluptatum vero recusandae eveniet tenetur! Numquam, sint ipsa? Vel maiores in a maxime voluptate nihil ipsa qui, accusantium dolorum?</p>
+            <div class="skills">
+                <article class="skills-coding">
+                    <h3 class="skill-title">Coding Skills</h3>
+                    <ul>
+                        <div class="bar-title">
+                            <span>HTML</span>
+                            <span>98%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-value" style="width:98%"></div>
+                        </div>
+                        <div class="bar-title">
+                            <span>CSS</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-value" style="width:90%"></div>
+                        </div>
+                        <div class="bar-title">
+                            <span>JavaScript</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-value" style="width:90%"></div>
+                        </div>
+                        <div class="bar-title">
+                            <span>TypeScript</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-value" style="width:98%"></div>
+                        </div>
+                        <div class="bar-title">
+                            <span>React</span>
+                            <span>79%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-value" style="width:79%"></div>
+                        </div>
+                        <div class="bar-title">
+                            <span>NodeJS</span>
+                            <span>68%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-value" style="width:68%"></div>
+                        </div>
+                    </ul>
+                </article>
+                <article class="skills-tools">
+                    <h3 class="skill-title">Tools</h3>
+                    <ul>
+                        <li>Visual Studio Code</li>
+                        <li>IntelliJ</li>
+                        <li>Android Studio</li>
+                        <li>Eclipse</li>
+                        <li>MySQL Workbench</li>
+                    </ul>
+                </article>
+                <article class="skills-etc">
+                    <h3 class="skill-title">Etc</h3>
+                    <ul>
+                        <li>Git</li>
+                        <li>Scrum Master</li>
+                        <li>SVN</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer>
+
+    </footer>
+</body>
+</html>
