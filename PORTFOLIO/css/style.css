@@ -222,3 +222,45 @@ section.container {
     height: 3px;
     background-color: var(--color-accent);
 }
+
+
+/* Work */
+#work{
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+.categories {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2.5rem 0;
+}
+.category {
+    position: relative;
+    color: var(--color-white);
+    padding: 0.5rem 3rem   ;
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+    font-size: 1.1rem;
+    background-color: var(--color-black);
+}
+.category-count {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    width: 28px;
+    height: 28px;
+    border-radius: 100%;
+    opacity: 0;
+    transition: all 1000ms ease;
+}
+.category-count.selected {
+    opacity: 1;
+    top: 0;
+}
+.catogory:hover .category-count{
+    opacity: 1;
+    top: 0;
+}
