@@ -8,7 +8,7 @@
     --color-deepblack: rgb(0,0,0);
     --color-darkgray: rgb(235,235,235);
 
-    --max-size-width: 2000px;
+    --max-size-width: 1800px;
 }
 
 ul {
@@ -21,8 +21,7 @@ a {
     width: var(--max-size-width);
     max-width: 100%;
     margin: auto;
-    padding: 0 20px;
-    
+    /* padding: 0 20px; */
 }
 
 
@@ -103,14 +102,14 @@ header {
 .header-lower {
     display: grid;
     width: 1000px;
-    grid-template-columns: 4fr 2fr 2fr 2fr 0.7fr;
+    grid-template-columns: 4fr 2fr 2fr 3fr;
     margin: auto;
     justify-content: center;
     align-items: center;
-    /* padding: 10px 0; */
-    border: 1px solid red;
+    padding: 0;
+    border: 1px solid var(--color-darkgray);
     border-radius: 1000px;
-    /* margin-bottom: 50px; */
+    box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.1);;
 }
 .upper {
     font-size: 0.8rem;
@@ -126,9 +125,12 @@ header {
     outline: none;
     font-size: 1rem;
 }
-
-.text {
+/* .text {
     border-right: 3px solid var(--color-darkgray);
+    padding-left: 10%;
+} */
+.text {
+    position: relative;
     padding-left: 10%;
 }
 .text-margin {
@@ -137,6 +139,11 @@ header {
 .text-last {
     border-right: none;
     padding-left: 10%;
+}
+.header-lower-item-final > .text-margin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .search {
     display: flex;
@@ -148,21 +155,63 @@ header {
     height: 50px;
     border-radius: 100%;
     color: var(--color-lightgray);
-}
-
-.search:hover {
-    background-color: rgb(226,27,95);
+    margin-right: 10px;
 }
 .header-lower-item:hover {
     background-color: var(--color-darkgray);
     border-radius: 1000px;
 }
-/* .text-margin:hover {
+.header-lower-item:hover .place-search {
+    background-color: var(--color-darkgray);
+}
+.place-search:hover {
+    background-color: var(--color-darkgray);
+}
+.header-lower-item-final:hover {
     background-color: var(--color-darkgray);
     border-radius: 1000px;
-    /* margin: 0; */
-} */
+}
+.search:hover {
+    background-color: rgb(226,27,95);
+}
 
+.header-lower-item,
+.header-lower-item-final {
+    position: relative;
+}
+
+.header-lower-item::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    right: 0;
+    width: 2px;
+    background-color: var(--color-darkgray);
+}
+.header-lower-item-final::after {
+    display: none;
+}
+
+/* hover 시 자기 왼쪽 경계선 제거 */
+.header-lower-item:hover::before,
+.header-lower-item-final:hover::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: -2px;  /* 경계선 위치를 왼쪽에 맞추기 */
+    width: 2px;
+    background-color: white;
+
+}
+
+/* hover 시 자기 오른쪽 경계선 제거 */
+.header-lower-item:hover::after,
+.header-lower-item-final:hover::after {
+    /* background-color: white; */
+    display: none;
+}
 
 /* list */
 #list > h3 {
@@ -174,16 +223,19 @@ header {
     color: var(--color-black);
 }
 .lists {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 0;
-    padding-left: 0;
+   display: grid;
+   grid-template-columns: repeat(7, 1fr);
+   gap: 1rem;
+   margin-left: 0;
+   padding-left: 0;
+}
+.list {
+    position: relative;
+    overflow: hidden;
 }
 .list-img {
-    width: 270px; 
-    height: 260px;
+    width: 100%; 
+    height: 220px;
     border-radius: 10%;
     object-fit: cover;
 }
@@ -195,6 +247,52 @@ header {
     color: var(--color-gray);
     font-size: 0.8rem;
 }
+
+.guest {
+    position: absolute;
+    display: flex;
+    background-color: var(--color-darkgray);
+    font-size: 0.7rem;
+    padding: 5px 15px;
+    margin: 0;
+    top: 10px;
+    left: 10px;
+    border-radius: 50px;
+}
+.fa-solid {
+    position: absolute;
+    color: var(--color-gray);
+    opacity: 0.8;
+    font-size: 1.5rem;
+    top: 15px;
+    right: 15px;
+}
+.fa-regular {
+    position: absolute;
+    color: white;
+    font-size: 1.5rem;
+    top: 15px;
+    right: 15px;
+}
+.fa-solid:hover {
+    position: absolute;
+    color: var(--color-gray);
+    opacity: 0.8;
+    font-size: 1.6rem;
+    top: 14px;
+    right: 14px;
+    transition: all 0.2s ease-in-out;
+}
+.fa-regular:hover {
+    position: absolute;
+    color: white;
+    font-size: 1.6rem;
+    top: 14px;
+    right: 14px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* recommand */
 
 #recommand > h2 {
     text-align: start;
@@ -238,6 +336,8 @@ header {
     flex-direction: row;
     padding-bottom: 50px;
     border-bottom: 1px solid var(--color-darkgray);
+    line-height: 1rem;
+    font-size: 0.8rem;
 }
 .help-title {
     color: var(--color-deepblack);
@@ -270,4 +370,17 @@ footer {
 .condition {
     color: var(--color-gray);
     font-size: 0.7rem;
+}
+
+/*******************************************************
+    Media screen - 768 * 1024
+*******************************************************/
+@media screen and (max-width:1080px) {
+    .container {
+        max-width: 800px;
+    }
+    .header {
+        flex-direction: column;
+        align-items: start;
+    }
 }
