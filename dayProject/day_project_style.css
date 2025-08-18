@@ -29,7 +29,8 @@ a {
 
 /* header */
 header {
-    border-bottom: 1.5px solid var(--color-gray);
+    border-bottom: 1.5px solid var(--color-darkgray);
+    padding-bottom: 30px;
 }
 
 /* header-upper */
@@ -102,41 +103,65 @@ header {
 .header-lower {
     display: grid;
     width: 1000px;
-    grid-template-columns: 4fr 2fr 2fr 2fr 1fr;
+    grid-template-columns: 4fr 2fr 2fr 2fr 0.7fr;
+    margin: auto;
     justify-content: center;
     align-items: center;
-    /* padding: 20px 0; */
+    /* padding: 10px 0; */
     border: 1px solid red;
     border-radius: 1000px;
     /* margin-bottom: 50px; */
 }
-.header-lower-fifth {
-    display: flex;
-    justify-content: space-between;
+.upper {
+    font-size: 0.8rem;
+    color: var(--color-black);
+    font-weight: bold;
 }
-/* .header-lower-item {
-    align-items: start;
+.lower {
+    font-size: 1rem;
+    color: var(--color-gray);
+}
+.place-search {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
 
-    padding: 10px 10px
-} */
-/* .header-lower-item-first, .header-lower-item-last {
-    align-items: start;
+.text {
+    border-right: 3px solid var(--color-darkgray);
+    padding-left: 10%;
+}
+.text-margin {
+    margin: 10px 0;
+}
+.text-last {
     border-right: none;
+    padding-left: 10%;
+}
+.search {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px 10px;
-} */
- .header-lower-first:hover {
-    background-color: var(--color-darkgray);
- }
-/* .header-lower-item:hover, .header-lower-item-last:hover {
+    justify-content: center;
+    border-right: 1px solid var(--color-darkgray);
+    background-color: var(--color-pink);
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    color: var(--color-lightgray);
+}
+
+.search:hover {
+    background-color: rgb(226,27,95);
+}
+.header-lower-item:hover {
     background-color: var(--color-darkgray);
     border-radius: 1000px;
-    border: none;
+}
+/* .text-margin:hover {
+    background-color: var(--color-darkgray);
+    border-radius: 1000px;
+    /* margin: 0; */
 } */
-
 
 
 /* list */
