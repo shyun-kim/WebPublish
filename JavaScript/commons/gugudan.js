@@ -12,7 +12,7 @@ export function multiGugudan(start, end){
     for(let i=1; i<=9; i++){
         let rows = '';
         for(let j=start; j <=end; j++) {
-            rows += `${j}*${i} = ${i*j}\t`;
+            rows += `${j} x ${i} = ${i*j}\t`;
         }
         console.log(rows);
         
