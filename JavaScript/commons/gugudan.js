@@ -8,6 +8,8 @@ export function singleGugudan(dan){
     }
 }
 
+// export 할때 default를 붙이면  import 할때 {} 안에 안넣어도 사용 가능
+
 export function multiGugudan(start, end){
     for(let i=1; i<=9; i++){
         let rows = '';
