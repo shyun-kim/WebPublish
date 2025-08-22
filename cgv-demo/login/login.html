@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/commons.css">
     <link rel="stylesheet" href="../css/cgv.css">
     <script src="https://kit.fontawesome.com/13d12747ce.js" crossorigin="anonymous"></script>
+    <script src="../js/cgv.js"></script>
 </head>
 <body>
     <!-- header -->
@@ -20,24 +21,25 @@
         <div class="center-layout login-form">
             <h1 class="center-title">로그인</h1>
             <form action="#" method="post">
-                <ul>
+                <ul id="login">
                     <li>
                         <p>아이디 비밀번호를 입력하신 후, 로그인 버튼을 클릭해 주세요.</p>
                     </li>
                     <li>
                         <div class="login-form-input">
                             <i class="fa-regular fa-user"></i>
-                            <input type="text" name="id" placeholder="아이디를 입력해주세요">
+                            <input type="text" name="id" id="id" placeholder="아이디를 입력해주세요">
                         </div>
                     </li>
                     <li>
                         <div class="login-form-input">
                             <i class="fa-solid fa-lock"></i>
-                            <input type="password" name="pwd" placeholder="비밀번호를 입력해주세요">
+                            <input type="password" name="pwd" id="pwd" placeholder="비밀번호를 입력해주세요">
                         </div>
                     </li>
                     <li>
-                        <button class="btn-main-color">로그인</button>
+                        <button type="button" class="btn-main-color" onclick="loginCheck()">로그인</button>
+                        <!-- 설정이 없으면 type ="submit", submit이면 action 링크로 데이터 송부 -->
                     </li>
                     <li>
                         <div>
