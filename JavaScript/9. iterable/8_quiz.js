@@ -37,11 +37,11 @@ console.log(n1, n2, n3);
 console.clear();
 //textlist를 입력받아, 3글자 이상의 text이면 새로운 객체를 생성하여 반환
 function textFilter(array) {
-    result = array.filter((text) => text.length >=3 )
+    return array.filter((text) => text.length >=3 )
 }
 //textlist를 입력받아, 3글자 이상이 아닌 text이면 새로운 객체를 생성하여 반환
 function textFilter2(array) {
-    result22 = array.filter((text) => text.length <=3 )
+    return array.filter((text) => text.length <=3 )
 }
 
 let result = textFilter(['javascript', 'java', 'css', 'ab', 'html']);
