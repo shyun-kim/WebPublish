@@ -26,9 +26,9 @@ async function pizzaOrder()  {
 
 pizzaOrder();
 
-fetch(데이터를 가져오는 주소)
-    .than()
-    .catch();
+// fetch(데이터를 가져오는 주소)
+//     .than()
+//     .catch();
 
 
 
