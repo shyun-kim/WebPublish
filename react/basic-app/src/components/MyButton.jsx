@@ -1,7 +1,7 @@
-export function MyButton() {
+export function MyButton({name, type, style}) {
     return (
         // <button style={{background: "red"}} 
-        <button className="myButton" 
-                type="button">클릭해주세요</button>
+        <button className={style}
+                type={type}>{name}</button>
     )
 }

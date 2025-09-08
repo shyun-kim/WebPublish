@@ -1,4 +1,32 @@
 /** value 값에 따옴표 삭제*/
+.menu-list{
+  list-style-type: none;
+  display: flex;
+  gap: 5px;
+}
+
+.menu {
+  text-decoration: none;
+  padding: 5px 20px;
+}
+.button {
+  width: 150px;
+  height: 50px;
+  background-color: aquamarine;
+  color: red;
+}
+.submit {
+  width: 200px;
+  height: 50px;
+  background-color: yellow;
+  color: red;
+}
+.reset {
+  width: 150px;
+  height: 50px;
+  background-color: rgb(212, 14, 179);
+  color: cyan;
+}
 
 .title {
   color: yellow
