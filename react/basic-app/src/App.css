@@ -1,8 +1,8 @@
 /** value 값에 따옴표 삭제*/
-.menu-list{
+.menu-List{
   list-style-type: none;
   display: flex;
-  gap: 5px;
+  gap: 50px;
 }
 
 .menu {
