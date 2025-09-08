@@ -1,20 +1,16 @@
-// import logo from './logo.svg';
-// import './App.css';
+import './App.css';
 
-function App() {
+import { MyTitle, MyTitle3 } from "./components/MyTitle.jsx";
+import { MyButton } from "./components/MyButton.jsx";
+
+export default function App() {
   return (
-    <div>
-      <h1 className="App">Hello~ React App</h1>
-      <h1 className="App">Hello~ React App</h1>
-      <h1 className="App">Hello~ React App</h1>
-      <h1 className="App">Hello~ React App</h1>
-      <h1 className="App">Hello~ React App</h1>
-      <h1 className="App">Hello~ React App</h1>
-      <h1 className="App">Hello~ React App</h1>
-      <h1 className="App">Hello~ React App</h1>
-      <h1 className="App">Hello~ React App</h1>
-    </div>
+    <>
+      <MyTitle />
+      <MyTitle3 />
+      <MyButton />
+    </>
   );
 }
 
-export default App;
+
