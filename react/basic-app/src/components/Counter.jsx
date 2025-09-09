@@ -1,8 +1,6 @@
 import { useState } from "react";
 
-export function Counter({click, total, init}) {
-    // console.log(init, typeof init);
-    
+export function Counter({click, total, init}) {    
     const [number, setNumber] = useState(0);
 
     const handleClickIncrement = () => {
