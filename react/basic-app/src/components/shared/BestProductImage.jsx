@@ -13,7 +13,9 @@ export function BestProductImage({img, style, rank, like, icon, cartCount}) {
             <ProductImage img={img} style={style} /> 
             {/* <span className="best-product-img-no">{rank}</span> */}
             <Icon   value={rank}
-                    bg="green"
+                    bg= {icon
+                        
+                    }//"green"
                     color="#fff" 
                     radius="30px"
                     width= "100px"

@@ -1,7 +1,7 @@
 /**
  * KMDB 영화 포스터 검색
  */
-async function searchMoviePoster(movieNm, openDt) {
+export async function searchMoviePoster(movieNm, openDt) {
     const key = '59H5F0U0OFQB3R2261VM';
     let url = `http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/`;
     url += `search_json2.jsp?collection=kmdb_new2&detail=Y`;
@@ -20,11 +20,10 @@ async function searchMoviePoster(movieNm, openDt) {
 export async function fetchKobisAPI(sdate) {
     //kobis api 연동
     let key = "2c0579b0529bc5042a8b0c5b3149b18b";
-    let sdate = "20250903";
     let url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/`
     url += `searchDailyBoxOfficeList.json?key=${key}&targetDt=${sdate}`;
     let response = await fetch(url);
-    
+
     return response.json();    
 }
 
