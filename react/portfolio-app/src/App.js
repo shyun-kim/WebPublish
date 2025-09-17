@@ -21,6 +21,7 @@ export default function App() {
                   testimonials: []
                 },
       footer: { links: [] }
+      
   };
   const [data, setData] = useState(init);
 
