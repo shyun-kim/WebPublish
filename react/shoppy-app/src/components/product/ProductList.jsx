@@ -4,7 +4,7 @@ import { axiosData, groupByRows } from '../../utils/dataFetch.js';
 
 export function ProductList() {
     const [rows, setRows] = useState([]);
-    const [number, setNumber] = useState(2);
+    const [number, setNumber] = useState(3);
 
 
     useEffect(()=>{  

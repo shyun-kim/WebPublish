@@ -1,9 +1,53 @@
 import { useRef, useState } from "react"
+import { validateFormCheck } from "../utils/validate.js";
+// fareguser
+// falock
 
 
 export function Login() {
-    useState
-    useRef
+    const idRef = useRef(null);
+    const pwdRef = useRef(null);
+    const [formData, setFormData] = useState({id:'',pwd:''});
+    const [errors, setErrors] = useState({id:'',pwd:''});
+    
+    const handleFormChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({...formData, [name]:value});
+        setErrors({id:'',pwd:''});
+    }
+
+    // const validateFormCheck = () => {
+    //     if(idRef.current.value === "") {
+    //         // alert("아이디를 입력해 주세요");
+    //         setErrors({...errors, id: "아이디를 입력해주세요"});
+    //         idRef.current.focus();
+    //         return false;
+    //     } else if (pwdRef.current.value === "") {
+    //         // alert("패스워드를 입력해 주세요");
+    //         setErrors({...errors, pwd: "패스워드를 입력해주세요"});
+    //         pwdRef.current.focus();
+    //         return false;
+    //     }
+    //     return true;
+    // }
+
+    const handleLoginSubmit = (e) => {
+        e.preventDefault();
+        const param={
+            idRef: idRef,
+            pwdRef: pwdRef,
+            setErrors: setErrors,
+            errors: errors
+        }
+        if(validateFormCheck(param)){
+            console.log('서버전송--->', formData);
+
+        }
+        
+    }
+
+    
+    
     
     return(
     <div class="content">
@@ -24,6 +68,7 @@ export function Login() {
                                     onChange={handleFormChange}
                                     placeholder="아이디를 입력해주세요"/>
                         </div>
+                        <span style={{color:"red", fontSize:"0.8rem"}}>{errors.id}</span>
                     </li>
                     <li>
                         <div class="login-form-input">
@@ -35,9 +80,10 @@ export function Login() {
                                     onChange={handleFormChange}
                                     placeholder="비밀번호를 입력해주세요"/>
                         </div>
+                        <span style={{color:"red", fontSize:"0.8rem"}}>{errors.pwd}</span>
                     </li>
                     <li>
-                        <button type="button"
+                        <button type="submit"
                                 class="btn-main-color"
                                 >로그인</button>
                     </li>
