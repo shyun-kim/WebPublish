@@ -52,14 +52,18 @@ export function DetailInfo({info}) {
                                     <li>{item.height}</li>
                                     <li>{item.size}</li>
                                     </>
-                                    
+                                }
                                     { item.title === "SIZE" &&
                                         <>
-                                        <li></li>
-                                        
+                                        <li>총길이: {item.totalLength}</li>
+                                        <li>어깨너비: {item.shoulderWidth}</li>
+                                        <li>가슴너비: {item.chestWidth}</li>
+                                        <li>소매길이: {item.sleeveLength}</li>
+                                        <li>소매밑단: {item.sleeveHemWidth}</li>
+                                        <li>밑단너비: {item.hemLength}</li>
+                                        <li>암홀: {item.armhole}</li>
                                         </>
                                     }
-                                }
                             </ul>   
                         :
                             <ul className='list Nolist'>

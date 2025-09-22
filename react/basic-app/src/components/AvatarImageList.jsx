@@ -6,7 +6,7 @@ export function AvatarImageList({imgList}) {
     return(
         <>
             { imgList.map(item => 
-                <img className={item.style} src={item.img} />
+                <img src={item.img} className={item.style}/>
         
             ) }
         </>
