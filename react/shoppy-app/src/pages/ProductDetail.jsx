@@ -5,12 +5,16 @@ import { PiGiftThin } from "react-icons/pi";
 import { ImageList  } from '../components/commons/ImageList.jsx'
 import { StarRating } from '../components/commons/StarRating.jsx'
 import { addCart } from '../App.js'
+import {Detail } from '../components/detailTabs/Detail.jsx'
 
 export function ProductDetail({addCart}) {
     const {pid} = useParams();  // { pid: 1}
     const [product, setProduct] = useState({});
     const [size, setSize] = useState('XS');
     const [imgList, setImgList] = useState({});
+    const tabLabels = ['DETAIL', 'REVIEW', 'Q&A', 'RETURN & DELIVERY'];
+    const [tabName, setTabName] = useState('detail');
+    const tabEventNames = ['detail', 'review', 'qna', 'return'];
 
     useEffect(()=> {
         const filterData = async () => {
@@ -92,8 +96,31 @@ export function ProductDetail({addCart}) {
 
 
 
+
                 </ul>
+
+
             </div>
+            
+            <div className='product-detail-tab'>
+                <ul className='tabs'>
+                    { tabLabels && tabLabels.map((label, i) => 
+                        <li className={tabName === tabEventNames[i]? "active": "" }>
+                            <button type="button"
+                                    onClick={()=> setTabName(tabEventNames[i])}
+                                >{label}</button>
+                        </li>
+                    )}
+                </ul>
+
+                {tabName === "detail" 
+                                && <Detail imgList={imgList}
+                                info={product.detailInfo}       />}
+                {/* {tabName === "review" &&  리뷰컴포넌트} */}
+
+
+            </div>
+
         </div>
     );
 }

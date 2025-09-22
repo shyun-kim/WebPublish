@@ -5,7 +5,7 @@ import { Footer } from '../components/commons/Footer.jsx';
 /**
  * Shoppy-app 사이트의 화면 출력 레이아웃(틀)
  */
-export function Layout() {
+export function Layout({cartItem}) {
     return (
         <>
             <Header cartItem={cartItem}/>

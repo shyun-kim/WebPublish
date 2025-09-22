@@ -1,0 +1,84 @@
+import React from 'react'
+import { ImageList } from '../commons/ImageList.jsx';
+
+/**
+ * ProductDetail > Detail
+ */
+export function Detail({imgList, info}) {
+    console.log('detail-->', imgList, info);
+    
+  return (
+    <div>
+        <DetailImages imgList={imgList}/>
+        <DetailInfo info={info} />
+    </div>
+  )
+}
+
+
+/**
+ * ProductDetail > Detail > DetailImages
+ */
+export function DetailImages({imgList}) {
+    return (
+        <div className='detail-images'>
+            <div style={{padding:"20px"}}></div>
+            <img src="/images/holidatys_notice.jpg" 
+                alt="notice" />
+            <ImageList  imgList={imgList}
+                        className="detail-images-list"/>
+        </div>
+    )
+}
+
+/**
+ * ProductDetail > Detail > DetailImages
+ */
+export function DetailInfo({info}) {
+    console.log('info->', info);
+    
+    return (
+        <div className='detail-info'>
+            <h4 className='detail-info-title-top'>
+                {info && info.title_en} / {info&&info.title_ko}
+                {info && info.list.map(item => 
+                    <div>
+                        <h5 className='detail-info-title'>[{item.title}]</h5>
+                        {item.title === "SIZE" || item.title === "MODEL SIZE" ?
+                            <ul className='nolist'>
+                                <li>{item.type}</li>
+                                { item.title === "MODEL SIZE" &&
+                                    <>
+                                    <li>{item.height}</li>
+                                    <li>{item.size}</li>
+                                    </>
+                                    
+                                    { item.title === "SIZE" &&
+                                        <>
+                                        <li></li>
+                                        
+                                        </>
+                                    }
+                                }
+                            </ul>   
+                        :
+                            <ul className='list Nolist'>
+                                {item.title === "FABRIC" &&
+                                    <>
+                                    <li>Color: {item.color}</li>
+                                    <li>{item.material}</li>
+                                    </>
+                                }
+                                {
+                                    item.desctiption && item.description.map(desc =>
+                                        <li>{desc}</li>
+                                    )
+                                }
+                            </ul>
+                        }
+                    </div>
+                )}
+            </h4>
+        </div>
+    )
+}

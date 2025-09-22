@@ -18,7 +18,7 @@ export default function App() {
   //2. 장바구니 아이템 관리
   const [cartItems, setCartItems] = useState([]);
 
-  const addCart = (cartItems) => {
+  const addCart = (cartItem) => {
     setCartItems([...cartItems, cartItem]);
     setCartCount(cartCount+1);
   }
@@ -27,7 +27,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout/>}>
+        <Route path="/" element={<Layout cartCount={cartCount}/>}>
           <Route index element={<Home/>} />
           <Route path="/all" element={<Products/>} />
           <Route path="/login" element={<Login/>} />
