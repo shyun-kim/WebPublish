@@ -31,3 +31,4 @@ export function ProductList() {
         </div>
     );
 }
+

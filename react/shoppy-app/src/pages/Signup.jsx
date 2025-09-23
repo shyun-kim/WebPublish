@@ -1,7 +1,6 @@
-import React, { useState, useRef, useMemo } from 'react';
-import { validateFormCheck } from '../utils/validate.js';
+import React, { useState, useMemo } from 'react';
+import { validateSignupFormCheck } from '../utils/validate.js';
 import { initForm } from '../utils/init.js';
-import '../styles/cgvSignup.css';
 
 export function Signup() { 
     const initArray = ['id', 'pwd', 'cpwd', 'name', 'phone', 'emailName', 'emailDomain'];
@@ -33,7 +32,7 @@ export function Signup() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const param = {  refs: refs,   setErrors: setErrors }
-        if(validateFormCheck(param)) {
+        if(validateSignupFormCheck(param)) {
             console.log("submit-->", form);            
         }
     }    
@@ -138,3 +137,4 @@ export function Signup() {
     </div>
     );
 }
+

@@ -19,6 +19,7 @@ export const groupByRows = (array, number) => {
     return rows;
 }
 
+
 /**
  * axios 함수를 이용하여 데이터 가져오기
  */
@@ -35,3 +36,4 @@ export const fetchData = async (url) => {
     const jsonData = await response.json(); 
     return jsonData;
 }
+

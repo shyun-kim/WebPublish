@@ -1,29 +1,26 @@
-import { useRef, useState } from "react"
-import { validateFormCheck } from "../utils/validate.js";
-// fareguser
-// falock
-
+import { useState, useRef } from 'react';
+import { FaRegUser } from "react-icons/fa6";
+import { FaLock } from "react-icons/fa";
+import { validateFormCheck } from '../utils/validate.js';
 
 export function Login() {
     const idRef = useRef(null);
     const pwdRef = useRef(null);
-    const [formData, setFormData] = useState({id:'',pwd:''});
-    const [errors, setErrors] = useState({id:'',pwd:''});
-    
+    const [formData, setFormData] = useState({id:'', pwd:''});
+    const [errors, setErrors] = useState({id:'', pwd:''});
+
     const handleFormChange = (e) => {
-        const { name, value } = e.target;
+        const { name, value } = e.target; 
         setFormData({...formData, [name]:value});
-        setErrors({id:'',pwd:''});
+        setErrors({id:'', pwd:''});
     }
 
     // const validateFormCheck = () => {
     //     if(idRef.current.value === "") {
-    //         // alert("아이디를 입력해 주세요");
     //         setErrors({...errors, id: "아이디를 입력해주세요"});
     //         idRef.current.focus();
     //         return false;
-    //     } else if (pwdRef.current.value === "") {
-    //         // alert("패스워드를 입력해 주세요");
+    //     } else if(pwdRef.current.value === "") {
     //         setErrors({...errors, pwd: "패스워드를 입력해주세요"});
     //         pwdRef.current.focus();
     //         return false;
@@ -33,58 +30,53 @@ export function Login() {
 
     const handleLoginSubmit = (e) => {
         e.preventDefault();
-        const param={
+        const param = {
             idRef: idRef,
             pwdRef: pwdRef,
             setErrors: setErrors,
             errors: errors
         }
-        if(validateFormCheck(param)){
-            console.log('서버전송--->', formData);
-
+        if(validateFormCheck(param)) {
+            console.log('서버전송 ---> ', formData);  
         }
-        
     }
-
     
-    
-    
-    return(
-    <div class="content">
-        <div class="center-layout login-form">
-            <h1 class="center-title">로그인</h1>
+    return (
+    <div className="content">
+        <div className="center-layout login-form">
+            <h1 className="center-title">로그인</h1>
             <form onSubmit={handleLoginSubmit}>
-                <ul id="login">
+                <ul>
                     <li>
                         <p>아이디 비밀번호를 입력하신 후, 로그인 버튼을 클릭해 주세요.</p>
                     </li>
                     <li>
-                        <div class="login-form-input">
-                            <i class="fa-regular fa-user"></i>
+                        <div className="login-form-input">
+                            <FaRegUser />
                             <input  type="text" 
                                     name="id" 
                                     value={formData.id}
                                     ref={idRef}
                                     onChange={handleFormChange}
-                                    placeholder="아이디를 입력해주세요"/>
+                                    placeholder="아이디를 입력해주세요" />
                         </div>
                         <span style={{color:"red", fontSize:"0.8rem"}}>{errors.id}</span>
                     </li>
                     <li>
-                        <div class="login-form-input">
-                            <i class="fa-solid fa-lock"></i>
-                            <input  type="password"
+                        <div className="login-form-input">
+                            <FaLock />
+                            <input  type="password" 
                                     name="pwd" 
                                     value={formData.pwd}
                                     ref={pwdRef}
                                     onChange={handleFormChange}
-                                    placeholder="비밀번호를 입력해주세요"/>
+                                    placeholder="패스워드를 입력해주세요" />
                         </div>
                         <span style={{color:"red", fontSize:"0.8rem"}}>{errors.pwd}</span>
                     </li>
                     <li>
                         <button type="submit"
-                                class="btn-main-color"
+                                className="btn-main-color"                                
                                 >로그인</button>
                     </li>
                     <li>
@@ -100,7 +92,7 @@ export function Login() {
                         </div>
                     </li>
                     <li>
-                        <button class="btn-main-color-naver">네이버 로그인</button>
+                        <button className="btn-main-color-naver">네이버 로그인</button>
                     </li>
                 </ul>
                 <div>
@@ -109,7 +101,5 @@ export function Login() {
             </form>
         </div>
     </div>
-
-    )
+    );
 }
-
