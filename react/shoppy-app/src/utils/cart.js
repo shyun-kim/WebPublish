@@ -2,7 +2,15 @@
  * 상품리스트에서 이미지, 상품명, 가격 --> 장바구니 리스트에 추가
  */
 export function cartItemsAddInfo(products, items) {
-    
+    return items.map((item) => {
+        const product = products.find((product) => item.pid === product.pid);
+        return {
+            ...item,
+            image: product.image,
+            name: product.name,
+            price: product.price
+        };
+    });
 }
 
 /**
@@ -19,8 +27,10 @@ export function cartItemsCheck(prevItems, cartItem) {
             ? { ...item, qty: item.qty + 1 }
             : item
         );
-    } else {         
-        return [...prevItems, { ...cartItem }];  //존재하지 않으면 새로운 item 추가
+    } else {
+        const cid = Math.floor(Math.random()*10000);
+
+        return [...prevItems, { ...cartItem, cid:cid }];  //존재하지 않으면 새로운 item 추가
     }
 }
 
