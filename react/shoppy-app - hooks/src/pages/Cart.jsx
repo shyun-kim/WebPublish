@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { RiDeleteBin6Line } from 'react-icons/ri'
 import { axiosData } from '../utils/dataFetch.js';
 import { cartItemsAddInfo, getTotalPrice } from '../utils/cart.js';
+import { CartContext } from '../context/CartContext.js'
+
 import '../styles/cart.css'
 
 

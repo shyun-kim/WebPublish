@@ -8,7 +8,7 @@ import { Footer } from '../components/commons/Footer.jsx';
 export function Layout({cartCount}) {
     return (
         <>
-            <Header cartCount={cartCount} />
+            <Header />
             <Outlet />
             <Footer />
         </>

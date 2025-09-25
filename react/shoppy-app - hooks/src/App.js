@@ -33,7 +33,7 @@ export default function App() {
     <CartProvider>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout cartCount={cartCount} />}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<Home/>} />
           <Route path="/all" element={<Products/>} />
           <Route path="/login" element={<Login/>} />
