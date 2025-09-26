@@ -1,8 +1,8 @@
 import { useState } from 'react';
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import { Layout } from './pages/Layout.jsx';
-// import { Products } from './pages/Products.jsx';
-// import { Home } from './pages/Home.jsx';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Layout } from './pages/Layout.jsx';
+import { Products } from './pages/Products.jsx';
+import { Home } from './pages/Home.jsx';
 // import { Login } from './pages/Login.jsx';
 // import { Signup } from './pages/Signup.jsx';
 // import { ProductDetail } from './pages/ProductDetail.jsx';
@@ -50,14 +50,14 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout cartCount={cartCount} />}>
           <Route index element={<Home/>} />
-          <Route path="/all" element={<Product/>} />
-          <Route path="/login" element={<Login/>} />
+          <Route path="/all" element={<Products/>} />
+          {/* <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<Signup/>} />
           <Route path="/cart" element={<Cart  items={cartItems}
                                               updateCart={updateCart}/>} />
           <Route path="/products/:pid" element={<ProductDetail addCart={addCart} />}/>
           <Route path="/checkout" element={<CheckoutInfo />} />
-          <Route path="/support" element={<Support />} />
+          <Route path="/support" element={<Support />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>
