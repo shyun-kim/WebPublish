@@ -16,6 +16,7 @@ import { cartItemsCheck, updateCartItemsQty } from './utils/cart.js';
 import './styles/cgvSignup.css';
 import './styles/cgv.css';
 import './styles/shoppy.css';
+import { ProtectedPageRoute } from './pages/ProtectedPageRoute.js';
 
 export default function App() {
   const [cartCount, setCartCount] = useState(0);  //1. 장바구니 수량 관리  
@@ -40,10 +41,17 @@ export default function App() {
           <Route path="/all" element={<Products/>} />
           <Route path="/login" element={<AuthProvider><Login/></AuthProvider>} />
           <Route path="/signup" element={<Signup/>} />
-          <Route path="/cart" element={<Cart  items={cartItems} 
-                                              updateCart={updateCart}/>} />
+          <Route path="/cart" element={
+            <ProtectedPageRoute>
+              <Cart />
+            </ProtectedPageRoute>
+          } />
           <Route path="/products/:pid" element={<ProductDetail addCart={addCart} />} />
-          {/* <Route path="/checkout" element={<CheckoutInfo />} /> */}
+          <Route path="/checkout" element={
+            <ProtectedPageRoute>
+              <CheckoutInfo />
+            </ProtectedPageRoute>
+            } />
           {/* <Route path="/info" element={<ProductDetail addCart={addCart} />} /> */}
 
         </Route>

@@ -3,8 +3,10 @@ import { FaRegUser } from "react-icons/fa6";
 import { FaLock } from "react-icons/fa";
 import { validateFormCheck } from '../utils/validate.js';
 import { CartContext } from '../context/CartContext.js';
+import { useAuth } from '../hooks/useAuth.js';
 
 export function Login() {
+    const { handleLogin } = useAuth();
     const { cartCount } = useContext(CartContext);
     const idRef = useRef(null);
     const pwdRef = useRef(null);
@@ -40,6 +42,8 @@ export function Login() {
         }
         if(validateFormCheck(param)) {
             console.log('서버전송 ---> ', formData);  
+            const did = 'test';
+            const dpwd = '1234';
         }
     }
     

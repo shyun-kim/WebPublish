@@ -6,6 +6,7 @@ import { CartContext } from '../../context/CartContext.js';
 import { AuthContext } from '../../context/AuthContext.js';
 import { useAuth } from "../../hooks/useAuth.js"
 
+
 export function Header() {
     const { handleLogout } = useAuth();
     const { isLogin } = useContext(AuthContext);
@@ -32,12 +33,22 @@ export function Header() {
                         <GiShoppingCart className='header-icons'/>
                         <span className='header-icons-cart'>{cartCount}</span>
                     </Link>
-                    <Link to="/login">
-                        <button type="button">Login</button>
-                    </Link>
+                    { !isLogin &&
+                        <Link to="/login">
+                            <button type="button">Login</button>
+                        </Link>
+                    }
+                    { isLogin &&
+                        <button type="button">Logout</button>
+                    }
+                    
                     <Link to="/signup">
                         <button type="button">Signup</button>
-                    </Link>                   
+                    </Link>               
+                    <Link to="/support">
+                        <button type="button">Support</button>
+                    </Link>               
+
                 </nav>
             </div>
         </div>
