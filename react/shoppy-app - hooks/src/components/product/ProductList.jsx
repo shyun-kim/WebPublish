@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { ProductAvatar } from './ProductAvatar.jsx';
 import { axiosData, groupByRows } from '../../utils/dataFetch.js';
+import { ProductContext } from '../../context/ProductContext.js';
 
 export function ProductList() {
     const [rows, setRows] = useState([]);
