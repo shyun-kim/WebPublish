@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-
+import { axiosData } from '../utils/dataFetch.js';
 import { PiGiftThin } from 'react-icons/pi';
+import { ImageList } from '../components/commons/ImageList.jsx';
+import { StarRating } from '../components/commons/StarRating.jsx';
 
 
 export function ProductDetail({addCart}) {
@@ -35,17 +37,81 @@ export function ProductDetail({addCart}) {
     }
     return (
         <div className='content'>
-            <div className='product-detail-image-top'>
-                <img src={product.image} />
-                <ImageList  className='product-detail-image-top-list'
-                            imgList={imgList} />
+            <div className='product-detail-top'>
+                <div className='product-detail-image-top'>
+                    <img src={product.image} />
+                    <ImageList  className='product-detail-image-top-list'
+                                imgList={imgList} />
+                </div>
+                <ul className='product-detail-info-top'>
+                    <li className='product-detail-title'>{product.name}</li>
+                    <li className='product-detail-title'>
+                        {`${parseInt(product.price).toLocaleString()}원`}
+                    </li>
+                    <li className='product-detail-subtitle'>{product.info}</li>
+                    <li className='product-detail-subtitle-star'>
+                        <StarRating totalRate = {product.rate}
+                                    style='star-coral'
+                        />
+                        <span>527개 리뷰 &nbsp;&nbsp; {'>'} </span>
+                    </li>
+                    <li>
+                        <p className='product-detail-box'>신규회원, 무이자 할부 등</p>
+                    </li>
+                    <li className='flex'>
+                        <button className='product-detail-button size'>사이즈</button>
+                        <select 
+                            className='product-detail-select2'
+                            onChange={(e) => setSize(e.target.value)}>
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </li>
+                    <li className='flex'>
+                        <button type='buttons' 
+                                className='product-detail-buttons order'>바로구매</button>
+                        <button type='buttons' 
+                                className='product-detail-buttons cart'
+                                onClick={handleAddCartItem}>쇼핑백 담기</button>
+                        <div type='buttons' className='gift'>
+                            <PiGiftThin />
+                            <div className='gift-span'>선물하기</div>
+                        </div>
+                    </li>
+                    <li>
+                        <ul className='product-detail-summary-info'>
+                            <li>상품 요약 정보</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <ul className='product-detail-info-top'>
-                <li class>
+            
+            <div className='product-detail-tab'>
+                <ul className='tabs'>
+                    { tabLabels && tabLabels.map((label, i) => 
+                        <li className={tabName === tabEventNames[i] ? "active" : ""}>
+                            <button type='buttons'
+                                    onClick={() => setTabName(tabEventNames[i])}
+                            > {label}</button>
+                        </li>
+                    )}
+                </ul>
 
-                </li>
+                {tabName === "detail" && 
+                    <Detail     imgList={imgList}
+                                info={product.detailInfo} />}
+                {tabName === "review" && <Review />}
+                {tabName === "qna" && <QnA />}
+                {tabName === "return" && <Return />}
 
-            </ul>
+                {/* 디테일부터 리턴까지 jsx 파일 생성 필요 */}
+
+            </div>
+            <div style={{marginBottom: '50px'}}></div>
+
         </div>
-    )
+    );
 }
