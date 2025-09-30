@@ -42,9 +42,7 @@ export default function App() {
           <Route path="/login" element={<AuthProvider><Login/></AuthProvider>} />
           <Route path="/signup" element={<Signup/>} />
           <Route path="/cart" element={
-            <ProtectedPageRoute>
-              <Cart />
-            </ProtectedPageRoute>
+          <Cart />  
           } />
           <Route path="/products/:pid" element={<ProductDetail addCart={addCart} />} />
           <Route path="/checkout" element={

@@ -4,27 +4,25 @@ import { axiosData } from '../utils/dataFetch.js';
 import { cartItemsAddInfo, getTotalPrice } from '../utils/cart.js';
 import { CartContext } from '../context/CartContext.js'
 import { useCart } from '../hooks/useCart.js'
+import { showCart } from '../feature/cart/cartAPI.js'
 
 
 import '../styles/cart.css'
+import { useDispatch, useSelector } from 'react-redux';
 
 
-export function Cart({items, updateCart, removeCart}) {
+export function Cart() {
+    const dispatch = useDispatch();
+    const cartList = useSelector((state) => state.cart.cartList);
+    const totalPrice = useSelector((state) => state.cart.totalPrice);
+
     const navigate = useNavigate();
-    const [cartList, setCartList] = useState([]);
-    const [totalPrice, setTotalPrice] = useState(0);
+    const { updateCart, removeCart } = useCart();
+    // const [totalPrice, setTotalPrice] = useState(0);
 
     // const naviga
 
-    useEffect(() => {
-        const fetch = async() => {
-            const jsonData = await axiosData("/data/products.json");
-            setCartList(cartItemsAddInfo(jsonData, items));
-            setTotalPrice(getTotalPrice(jsonData, items));
-            
-        }
-        fetch();
-    },[]);
+    useEffect(() => {dispatch(showCart());} ,[]);
     
     //수량 업데이트 함수
     const handleUpdateCartList = (cid, type) => {

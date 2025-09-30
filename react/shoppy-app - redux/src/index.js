@@ -5,12 +5,12 @@ import App from './App.js';
 import reportWebVitals from './reportWebVitals.js';
 import { Provider } from 'react-redux'
 import { store } from './app/store.js';
-import AppCounter from './AppCounter.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={ store }>
     <React.StrictMode>
+      {/* <App /> */}
       <AppCounter />
     </React.StrictMode>
   </Provider>

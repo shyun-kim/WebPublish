@@ -9,8 +9,13 @@ import { Review } from '../components/detailTabs/Review.jsx';
 import { QnA } from '../components/detailTabs/QnA.jsx';
 import { Return } from '../components/detailTabs/Return.jsx';
 
+import { useDispatch } from 'react-redux';
+import { addCartItem } from '../feature/cart/cartSlice.js';
+
 export function ProductDetail({ addCart }) {
+    const dispatch = useDispatch();
     const {pid} = useParams();  // { pid: 1}
+    // const { addCart } = useCart();
     const [product, setProduct] = useState({});
     const [size, setSize] = useState('XS');
     const [imgList, setImgList] = useState([]);
@@ -37,7 +42,10 @@ export function ProductDetail({ addCart }) {
             size: size,
             qty: 1
         }
-        addCart(cartItem);
+        // addCart(cartItem);
+        dispatch(addCartItem({"cartItem": cartItem}));
+        dispatch(updateCartCount());
+
     }
     
 

@@ -20,7 +20,7 @@ export function useCart() {
         const fetch = async() => {
             const jsonData = await axiosData("/data/products.json");
             setCartList(cartItemsAddInfo(jsonData, cartList));
-            // setTotalPrice(getTotalPrice(jsonData, items));
+            setTotalPrice(getTotalPrice(jsonData, items));
         }
         fetch();
     }
