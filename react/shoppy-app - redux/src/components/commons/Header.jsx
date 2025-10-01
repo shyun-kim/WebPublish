@@ -13,10 +13,21 @@ import { useSelector } from 'react-redux';
 
 
 export function Header() {
-    const { handleLogout } = useAuth();
-    const { isLogin } = useContext(AuthContext);
-
+    // const { handleLogout } = useAuth();
+    const dispatch = useDispatch();
     const cartCount = useSelector((state) => state.cart.cartCount);
+    const isLogin  = useContext(AuthContext);
+
+    const handleLogout = () => {
+        const succ = dispatch(getLogout());
+        const loginInfo = localStorage.getItem("loginInfo");
+        if(succ && loginInfo === null){
+            alert("로그아웃 되었습니다.");
+            navigate("/")
+        } 
+    }
+
+    
 
     
 
@@ -48,7 +59,7 @@ export function Header() {
                     }
                     { isLogin &&
                         <button type="button"
-                                onClick={()=>{getLogout()}}>Logout</button>
+                                onClick={()=>{dispatch(getLogout())}}>Logout</button>
                     }
                     
                     <Link to="/signup">

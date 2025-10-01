@@ -12,9 +12,11 @@ export const getLogin = () => async (dispatch) => {
             idRef.current.focus();
         }
     }
+    return false;
 }
 
 export const getLogout = () => async (dispatch) => {
     dispatch(logout());
+    return true;
 }
 
