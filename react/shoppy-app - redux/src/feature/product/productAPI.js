@@ -2,6 +2,10 @@ import React from 'react'
 import { createProduct } from './productSlice.js'
 import { axiosData, groupByRows } from '../../utils/dataFetch.js'
 
+export const getProduct = (pid) => async(dispatch) => {
+    dispatch(filterProduct({pid, }))
+}
+
 export const getProductList = (number) => async(dispatch) => {
     const jsonData =await axiosData("/data/products.json");
     const rows = groupByRows(jsonData,number);

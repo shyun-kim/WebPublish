@@ -1,11 +1,18 @@
 import { useState, useRef, useContext } from 'react';
+// import {useNavigate} from 
 import { FaRegUser } from "react-icons/fa6";
 import { FaLock } from "react-icons/fa";
 import { validateFormCheck } from '../utils/validate.js';
 import { CartContext } from '../context/CartContext.js';
 import { useAuth } from '../hooks/useAuth.js';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { getLogin, getLogout } from '../feature/auth/authAPI.js';
+
 export function Login() {
+    // const isLogin = useSelector();
+    const dispatch = useDispatch();
+
     const { handleLogin } = useAuth();
     const { cartCount } = useContext(CartContext);
     const idRef = useRef(null);
@@ -18,6 +25,18 @@ export function Login() {
         setFormData({...formData, [name]:value});
         setErrors({id:'', pwd:''});
     }
+
+    const succ = dispatch(getLogin(formData, param));//비동기식 처리 후 isLogin 변경
+    // console.log('isLogin2-->',isLogin); //동기식 처리 -> false
+
+    if(succ) {
+        alert("로그인에 성공했습니다.");
+        navigator('/')
+    } else {
+        alert("로그인에 실패했습니다")
+    }
+    
+
 
     // const validateFormCheck = () => {
     //     if(idRef.current.value === "") {

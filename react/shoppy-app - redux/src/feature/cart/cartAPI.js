@@ -21,7 +21,7 @@ export const showCart = () => async(dispatch) => {
     // setTotalPrice(getTotalPrice(jsonData, items));
 }
 
-export const addCart = (cartItem) => async (dispatch) => {
+export const addCart = (pid, size) => async (dispatch) => {
     dispatch(addCartItem({"cartItem":cartItem}));
     dispatch(updateCartCount());
 }

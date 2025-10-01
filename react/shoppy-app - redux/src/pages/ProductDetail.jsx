@@ -8,45 +8,45 @@ import { Detail } from '../components/detailTabs/Detail.jsx';
 import { Review } from '../components/detailTabs/Review.jsx';
 import { QnA } from '../components/detailTabs/QnA.jsx';
 import { Return } from '../components/detailTabs/Return.jsx';
+// import {filterProduct}
 
-import { useDispatch } from 'react-redux';
+
+import { useDispatch, useSelector } from 'react-redux';
 import { addCartItem } from '../feature/cart/cartSlice.js';
+import { addCart } from '../feature/cart/cartAPI.js';
+import { getProduct } from '../feature/product/productAPI.js';
 
-export function ProductDetail({ addCart }) {
-    const dispatch = useDispatch();
+export function ProductDetail() {
     const {pid} = useParams();  // { pid: 1}
+    const dispatch = useDispatch();
+    const product = useSelector((state) => state.product.product);
+    const imgList = useSelector((state) => state.product.product.imgList);
     // const { addCart } = useCart();
-    const [product, setProduct] = useState({});
+    // const [product, setProduct] = useState({});
+    // const [imgList, setImgList] = useState([]);
     const [size, setSize] = useState('XS');
-    const [imgList, setImgList] = useState([]);
-    const tabLabels = ['DETAIL', 'REVIEW', 'Q&A', 'RETURN & DELIVERY'];
     const [tabName, setTabName] = useState('detail');
+    const tabLabels = ['DETAIL', 'REVIEW', 'Q&A', 'RETURN & DELIVERY'];
     const tabEventNames = ['detail', 'review', 'qna', 'return'];
 
 
     useEffect(()=> {
-        const filterData = async () => {
-            const jsonData = await axiosData("/data/products.json");
-            const [filterProduct] = await jsonData.filter((item) => item.pid === pid);
-            setProduct(filterProduct); 
-            setImgList(filterProduct.imgList);                
-        }
-        filterData();
+        filterProduct(pid);
     }, []);
 
-    //쇼핑백 추가하기 함수
-    const handleAddCartItem = () => {
-        // alert("상품이 카트에 추가되었습니다.");
-        const cartItem = {
-            pid: product.pid,
-            size: size,
-            qty: 1
-        }
-        // addCart(cartItem);
-        dispatch(addCartItem({"cartItem": cartItem}));
-        dispatch(updateCartCount());
+    // //쇼핑백 추가하기 함수
+    // const handleAddCartItem = () => {
+    //     // alert("상품이 카트에 추가되었습니다.");
+    //     const cartItem = {
+    //         pid: product.pid,
+    //         size: size,
+    //         qty: 1
+    //     }
+    //     // addCart(cartItem);
+    //     dispatch(addCartItem({"cartItem": cartItem}));
+    //     dispatch(updateCartCount());
 
-    }
+    // }
     
 
     return (
@@ -91,7 +91,7 @@ export function ProductDetail({ addCart }) {
                                 className="product-detail-button order">바로 구매</button>
                         <button type="button"
                                 className="product-detail-button cart"
-                                onClick={handleAddCartItem}
+                                onClick={()=>{dispatch(addCart(product.pid, size))}} //handleAddCartItem를 없애고 간결화 하기 위함
                                 > 쇼핑백 담기</button>
                         <div type="button" className="gift">
                             <PiGiftThin />
