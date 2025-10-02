@@ -8,7 +8,8 @@ import { ImageList } from '../commons/ImageList'
 export function Detail({imgList, info}) {
   return (
     <div>
-        
+        <DetailImages imgList={imgList} />
+        <DetailInfo info={info} />
     </div>
   )
 }
