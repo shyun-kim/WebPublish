@@ -1,11 +1,14 @@
 import React, { useState, useContext } from "react";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "../styles/cart.css";
 import "../styles/checkoutinfo.css";
 
 export function CheckoutInfo() {   
+    const cartList = useSelector((state) => state.cart.cartList);
+    const totalPrice = useSelector((state) => state.cart.totalPrice);
     // const { state } = useLocation();
-    const { cartList, totalPrice } = useContext(cartContext);
+    // const { cartList, totalPrice } = useContext(cartContext);
     // const [orderList, setOrderList] = useState(state.cartList);
     // console.log('state==>> ', state);
     

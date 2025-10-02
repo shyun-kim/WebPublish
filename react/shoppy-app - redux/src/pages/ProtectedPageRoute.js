@@ -1,6 +1,7 @@
 import React, { useContext, useRef } from 'react'
 import { AuthContext } from '../context/AuthContext.js'
 import { Navigate } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
 export function ProtectedPageRoute({ children }) {
     const isAlert = useRef(false);
