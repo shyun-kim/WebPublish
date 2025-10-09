@@ -1,3 +1,5 @@
+//by승현
+
 import React from 'react'
 import { TbStarFilled } from 'react-icons/tb';
 import { TbStarHalfFilled } from 'react-icons/tb';
@@ -27,12 +29,12 @@ export function StarRating({totalRate, style}) {
             )}
             
             {/* halfStar: 반별추가 */}
-            { [...Array(emptyStar)].map((_, i) =>
-            <span   key={i}
-                    className={style.concat(" ", color)}>
-                <TbStar />
-            </span>
-            )}
+            { halfStar &&
+                <span   key={halfStar}
+                        className={style.concat(" ", color)}>
+                    <TbStarHalfFilled />
+                </span>
+            }
 
             {/* emptyStar : 빈별 추가 */}
             { [...Array(emptyStar)].map((_, i) =>
@@ -45,15 +47,15 @@ export function StarRating({totalRate, style}) {
             {/* 별점 표시 - 리뷰 */}
             { style === 'star-black-big' &&
                 <>
-                <span className={style.concat("number")}>{totalRate}</span>
-                <span className={style.concat('tot-number')}>5</span>
+                <span className={style.concat(" number")}>{totalRate} /</span>
+                <span className={style.concat(' tot-number')}> 5 </span>
                 </>
             }
 
             {/* 별점 표시 */}
             { style === 'star-coral' &&
                 <>
-                <span className={style.concat('number')}>{totalRate}</span>
+                <span className={style.concat(' number')}>{totalRate}</span>
                 </>
             }
 

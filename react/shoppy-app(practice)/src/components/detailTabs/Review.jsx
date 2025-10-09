@@ -1,3 +1,5 @@
+//by 승현
+
 import React, { useState, useEffect } from 'react'
 import { axiosData } from '../../utils/dataFetch.js';
 import { StarRating } from '../commons/StarRating';
@@ -44,7 +46,7 @@ export function ReviewTop({ data }) {
                             구매하신 분들의 상품에 대한 평점입니다.
                         </p>
                         <StarRating totalRate={3.6}
-                                    style="star-black=big" />
+                                    style="star-black-big" />
                     </div>
                 </li>
                 { data.topList && data.topList.map(item =>
@@ -67,10 +69,10 @@ export function ReviewTop({ data }) {
  */
 export function ReviewType({title, names, values}) {
     return (
-        <div className='reivew-type'>
+        <div className='review-type'>
             <p className='review-type text'>{title}</p>
             {names && names.map((name, idx) =>
-                <div className='var-metadata'>
+                <div className='bar-metadata'>
                     <span className='bar-text1'>{name}</span>
                     <div className='bar-bg'>
                         <div className='bar-value' style={{width: `${values[idx]}%`}}></div>
@@ -133,9 +135,9 @@ export function ReviewList() {
 export function ReviewListItem() {
     return (
         <div className='review-list-item'>
-            <div className='pdt-reivew_info'>
+            <div className='pdt-review_info'>
                 <div className='product_review_info_left'>
-                    <div className='pdt_reivew_option'>
+                    <div className='pdt_review_option'>
                         <p><span>구매옵션 : MEDIUM</span></p>
                         <p><span>사이즈정보 : 180cm</span></p>
                     </div>
@@ -171,13 +173,13 @@ export function ReviewListItem() {
                 </li>
             </ul>
             <div className='pdt_review_detail'>
-                <p className='pdt_reivew_text'>
+                <p className='pdt_review_text'>
                     사진보다 색이 연해서 더 맘에드네요.
                     옷은무겁습니다 .
                     두꺼워서 따뜻하겠어요
                 </p>
             </div>
-            <div className='product_reivew_reaction'>
+            <div className='product_review_reaction'>
                 <div className='btn_report_item'>
                     <button
                         type='button'

@@ -1,17 +1,17 @@
 import React from 'react'
-import { ImageList } from '../commons/ImageList'
+import { ImageList } from '../commons/ImageList.jsx'
 
 /**
  * ProductDetail > Detail
  */
-
 export function Detail({imgList, info}) {
-  return (
-    <div>
-        <DetailImages imgList={imgList} />
-        <DetailInfo info={info} />
-    </div>
-  )
+
+    return (
+        <div>
+            <DetailImages imgList={imgList} />
+            <DetailInfo info={info} />
+        </div>
+    );
 }
 
 /**
@@ -34,6 +34,7 @@ export function DetailImages({imgList}) {
  * ProductDetail > Detail > DetailInfo
  */
 export function DetailInfo({info}) {
+
     return (
         <div className='detail-info'>
             <h4 className='detail-info-title-top'>

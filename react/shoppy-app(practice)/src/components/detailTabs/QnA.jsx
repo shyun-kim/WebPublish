@@ -19,7 +19,7 @@ export function QnA() {
     }
 
     const handleToggleButton = () => {
-        setIsOpen(isOpen);
+        setIsOpen(!isOpen);
     }
 
     return (
@@ -39,7 +39,7 @@ export function QnA() {
                 }
                 {!isOpen && <span>버튼이 코랄색 입니다.</span>}
             </div>
-            <table className='reivew-list-content'>
+            <table className='review-list-content'>
                 <tbody>
                     {qnaData && qnaData.map(item => 
                         <tr>

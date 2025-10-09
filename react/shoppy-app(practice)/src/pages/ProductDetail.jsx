@@ -1,3 +1,5 @@
+//by 승현
+
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { axiosData } from '../utils/dataFetch.js';
@@ -55,7 +57,7 @@ export function ProductDetail({addCart}) {
                     <li className='product-detail-subtitle'>{product.info}</li>
                     <li className='product-detail-subtitle-star'>
                         <StarRating totalRate = {product.rate}
-                                    style='star-coral'
+                                    style="star-coral"
                         />
                         <span>527개 리뷰 &nbsp;&nbsp; {'>'} </span>
                     </li>
@@ -76,9 +78,9 @@ export function ProductDetail({addCart}) {
                     </li>
                     <li className='flex'>
                         <button type='buttons' 
-                                className='product-detail-buttons order'>바로구매</button>
+                                className='product-detail-button order'>바로구매</button>
                         <button type='buttons' 
-                                className='product-detail-buttons cart'
+                                className='product-detail-button cart'
                                 onClick={handleAddCartItem}>쇼핑백 담기</button>
                         <div type='buttons' className='gift'>
                             <PiGiftThin />
@@ -111,7 +113,6 @@ export function ProductDetail({addCart}) {
                 {tabName === "qna" && <QnA />}
                 {tabName === "return" && <Return />}
 
-                {/* 디테일부터 리턴까지 jsx 파일 생성 필요 */}
 
             </div>
             <div style={{marginBottom: '50px'}}></div>
