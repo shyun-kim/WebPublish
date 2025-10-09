@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { axiosData } from '../../utils/dataFetch.js';
 
 export function QnA() {
     const [qnaData, setQnaData] = useState([]);

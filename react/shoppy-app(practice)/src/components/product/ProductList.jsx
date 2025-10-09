@@ -1,4 +1,7 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
+import { ProductAvatar } from './ProductAvatar.jsx'
+import { axiosData, groupByRows } from "../../utils/dataFetch.js";
 
 
 
@@ -21,7 +24,7 @@ export function ProductList() {
                 <div className="product-list" key={idx} >
                     {rowArray && rowArray.map((product, idx) =>
                     <Link to={`/products/${product.pid}`}>
-                        <productAvatar img={product.image} key={idx} />
+                        <ProductAvatar img={product.image} key={idx} />
                     </Link>
                     )}
                 </div>

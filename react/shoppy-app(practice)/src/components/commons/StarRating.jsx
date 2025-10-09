@@ -3,7 +3,7 @@ import { TbStarFilled } from 'react-icons/tb';
 import { TbStarHalfFilled } from 'react-icons/tb';
 import { TbStar } from 'react-icons/tb';
 
-export function StarRating() {
+export function StarRating({totalRate, style}) {
     const stars = [...Array(5)];
     const color = (style === "star-coral") ? "coral" : "black";
 

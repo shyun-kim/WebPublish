@@ -1,12 +1,10 @@
-import React, { useState } from 'react'
-import { axiosData } from '../../utils/dataFetch';
+import React, { useState, useEffect } from 'react'
+import { axiosData } from '../../utils/dataFetch.js';
 import { StarRating } from '../commons/StarRating';
 import { ImageList } from '../commons/ImageList';
 import { LikeItem } from '../commons/LikeItem';
-
 import { FaRegCircleQuestion } from 'react-icons/fa6'
 import { TbThumbUp } from 'react-icons/tb';
-
 
 /**
  * ProductDetail > Review
@@ -25,7 +23,8 @@ export function Review() {
 
     return (
         <div>
-      
+            <ReviewTop data={reviewData} />
+            <ReviewList />
         </div>
     );
 }
