@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { FaRegUser } from "react-icons/fa6";
 import { FaLock } from "react-icons/fa";
+import { validateFormCheck } from '../utils/validate';
 
 export function Login() {
-    const { handleLogin } = useAuth();
     const navigate = useNavigate();
     const idRef = useRef(null);
     const pwdRef = useRef(null);
     const [formData, setFormData] = useState({id:'', pwd:''});
     const [errors, setErrors] = useState({id:'', pwd:''});
-
+    
     const handleFormChange = (e) => {
         const { name, value } = e.target;
         setFormData({...formData, [name]: value});
@@ -30,7 +30,10 @@ export function Login() {
             const dpwd = "1234";
             if(did === formData.id && dpwd === formData.pwd) {
                 alert("로그인에 성공하셨습니다.");
-                handleLogin(formData.id);
+                const loginInfo = {
+                    "userId":formData.id,
+                    "token": "asdgaisoghpqaw"
+                }
                 navigate("/");
             } else {
                 alert("로그인에 실패, 확인후 다시 진행해 주세요.");
@@ -70,7 +73,7 @@ export function Login() {
                                         onChange={handleFormChange}
                                         placeholder='패스워드를 입력해주세요' />
                             </div>
-                            <span style={{color:'ref', fontSize:'0.8rem'}}>{errors.pwd}</span>
+                            <span style={{color:'red', fontSize:'0.8rem'}}>{errors.pwd}</span>
                         </li>
                         <li>
                             <button type='submit'
