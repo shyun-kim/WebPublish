@@ -6,11 +6,11 @@ import { Home } from './pages/Home.jsx';
 import { Login } from './pages/Login.jsx';
 import { Signup } from './pages/Signup.jsx';
 import { ProductDetail } from './pages/ProductDetail.jsx';
-import { Cart } from './pages/Cart.jsx';
-import { CheckoutInfo } from './pages/CheckoutInfo.jsx';
-import { Support } from './pages/Support.jsx';
+// import { Cart } from './pages/Cart.jsx';
+// import { CheckoutInfo } from './pages/CheckoutInfo.jsx';
+// import { Support } from './pages/Support.jsx';
 
-import { cartItemsCheck, updateCartItemsQty } from './utils/cart.js';
+// import { cartItemsCheck, updateCartItemsQty } from './utils/cart.js';
 
 import './styles/cgvSignup.css';
 import './styles/cgv.css';
