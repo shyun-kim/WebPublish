@@ -5,6 +5,7 @@ import { PiGiftThin } from 'react-icons/pi';
 import { ImageList } from '../components/commons/ImageList.jsx';
 import { StarRating } from '../components/commons/StarRating.jsx';
 import { Detail } from '../components/detailTabs/Detail.jsx';
+import { Review } from '../components/detailTabs/Review.jsx';
 
 
 export function ProductDetail({addCart}) {
