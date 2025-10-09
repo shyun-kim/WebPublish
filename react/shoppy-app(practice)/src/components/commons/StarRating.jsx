@@ -1,5 +1,3 @@
-//by승현
-
 import React from 'react'
 import { TbStarFilled } from 'react-icons/tb';
 import { TbStarHalfFilled } from 'react-icons/tb';

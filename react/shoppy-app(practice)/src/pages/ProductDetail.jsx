@@ -1,5 +1,3 @@
-//by 승현
-
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { axiosData } from '../utils/dataFetch.js';

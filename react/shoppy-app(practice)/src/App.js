@@ -6,7 +6,7 @@ import { Home } from './pages/Home.jsx';
 import { Login } from './pages/Login.jsx';
 import { Signup } from './pages/Signup.jsx';
 import { ProductDetail } from './pages/ProductDetail.jsx';
-// import { Cart } from './pages/Cart.jsx';
+import { Cart } from './pages/Cart.jsx';
 // import { CheckoutInfo } from './pages/CheckoutInfo.jsx';
 // import { Support } from './pages/Support.jsx';
 
@@ -52,8 +52,8 @@ export default function App() {
           <Route path="/all" element={<Products/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<Signup/>} />
-          {/* <Route path="/cart" element={<Cart  items={cartItems}
-                                              updateCart={updateCart}/>} /> */}
+          <Route path="/cart" element={<Cart  items={cartItems}
+                                              updateCart={updateCart}/>} />
           <Route path="/products/:pid" element={<ProductDetail addCart={addCart} />}/>
           {/* <Route path="/checkout" element={<CheckoutInfo />} />
           <Route path="/support" element={<Support />} /> */}

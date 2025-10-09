@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { RiDeleteBin6Line } from 'react-icons/ri';
+import { axiosData } from '../utils/dataFetch.js';
+import { cartItemsAddInfo, getTotalPrice } from '../utils/cart.js';
+import '../styles/cart.css'
 
 
 export function Cart({items, updateCart}) {
@@ -73,7 +76,48 @@ export function Cart({items, updateCart}) {
                     </div>
                 </div>
             )}
-            
+
+            {/* 주문버튼출력 */}
+            { cartList && cartList.length > 0 ?
+                <>
+                    <div className='cart-summary'>
+                        <h3>주문 예상 금액</h3>
+                        <div className='cart-summary-sub'>
+                            <p className='cart-total'>
+                                <label>총 상품 가격 : </label>
+                                <span>{totalPrice.toLocaleString()}원</span>
+                            </p>
+                            <p className='cart-total'>
+                                <label>총 할인 가격 : </label>
+                                <span>0원</span>
+                            </p>
+                            <p className='cart-total'>
+                                <label>총 배송비 : </label>
+                                <span>0원</span>
+                            </p>
+                        </div>
+                        <p className='cart-total2'>
+                            <label>총 금액 : </label>
+                            <span>{totalPrice.toLocaleString()}원</span>
+                        </p>
+                    </div>
+                    <div className='cart-actions'>
+                        <button type='button'
+                                onClick={() => {
+                                    navigate("/checkout", {state: { cartList: cartList,
+                                                                    totalPrice: totalPrice}});
+                                }}>주문하기</button>
+                    </div>
+                </>
+                : <div>
+                    <p>
+                        장바구니에 담은 상품이 없습니다. &nbsp;&nbsp;&nbsp;&nbsp;
+                        <Link to="/all">상품보러가기</Link>
+                    </p>
+                    <img src="../images/cart.jpg"
+                         style={{width:"50%", marginTop:"20px"}} />
+                </div>
+            }
         </div>
-    )
+    );
 }

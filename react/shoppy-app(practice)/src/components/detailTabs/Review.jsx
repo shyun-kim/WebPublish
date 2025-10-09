@@ -1,5 +1,3 @@
-//by 승현
-
 import React, { useState, useEffect } from 'react'
 import { axiosData } from '../../utils/dataFetch.js';
 import { StarRating } from '../commons/StarRating';
